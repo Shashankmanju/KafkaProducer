@@ -15,9 +15,9 @@ public class ProducerController {
     @Autowired
     private KafkaProducerService producerService;
 
-    @GetMapping("/produce")
+    @GetMapping("/producer")
     public String produceMessage(@RequestParam("message") String message) {
         producerService.sendMessage(message);
-        return "Message sent to Kafka Topic!";
+        return "Message sent to Kafka Topic successfully";
     }
 }
